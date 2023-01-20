@@ -7,22 +7,27 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <x-app-layout>
+            <x-slot name="header">
+                
+            </x-slot>
+        
         <h1>Blog Name</h1>
-        <a href="/posts/create">create</a>
+        <a href="/posts/create">[create]</a>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>
                     <a href="posts/{{ $post->id }}"><h2 class='title'>{{ $post->title}}</h2></a>
-                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                    <a href="/categories/{{ $post->category->id }}">[{{ $post->category->name }}]</a>
                     <p class='body'>{{$post->body}}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deletePost({{ $post->id }})">delete</button>
+                        <button type="button" onclick="deletePost({{ $post->id }})">[delete]</button>
                     </form>
                 </div>
+                </br>
             @endforeach
-           
         </div>
         <div class='paginate'>{{$posts->links()}}</div>
         <script>
@@ -34,5 +39,8 @@
                 }
             }
         </script>
+        
+        <p>ログインユーザー：{{ Auth::user()->name }}</p>
+        </x-app-layout>
     </body>
 </html>

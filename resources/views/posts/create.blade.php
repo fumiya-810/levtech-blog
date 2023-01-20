@@ -6,7 +6,13 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    
     <body class="antialised">
+            <x-app-layout>
+            <x-slot name="header">
+                
+            </x-slot>
+
         <h1>Blog Name</h1>
         <form action="/posts" method="POST">
             @csrf
@@ -34,5 +40,6 @@
         <div class='footer'>
             <a href="/">戻る</a>
         </div>
+        </x-app-layout>
     </body>
 </html>
