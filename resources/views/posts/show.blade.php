@@ -7,6 +7,11 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <x-app-layout>
+        <x-slot name="header">
+            
+        </x-slot>
+
         <h1 class='title'>{{ $post->title }}</h1>
         <div class='edit'>
             <a href="/posts/{{ $post->id }}/edit">edit</a>
@@ -22,5 +27,6 @@
         <div class='footer'>
             <a href="/">戻る</a>
         </div>
+        </x-app-layout>
     </body>
 </html>
