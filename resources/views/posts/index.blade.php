@@ -49,8 +49,8 @@
                     <a href="https://teratail.com/questions/{{ $question['id'] }}">
                         {{ $question['title'] }}
                     </a>
-                    <br>
                 </div>
+                </br>
             @endforeach
         </div>
 

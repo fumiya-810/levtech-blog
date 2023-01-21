@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use APP\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,5 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+//Route::get('/categories/{category}', [CategoryController::class, 'index']);
+//カリキュラムの書き方だと詳細ページに行けないので↓の書き方に変更
+Route::get('/categories/{category}','App\Http\Controllers\CategoryController@index');
 
 require __DIR__.'/auth.php';
