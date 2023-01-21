@@ -17,8 +17,10 @@
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>
-                    <a href="posts/{{ $post->id }}"><h2 class='title'>{{ $post->title}}</h2></a>
-                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                    <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title}}なぜ飛べない</h2></a>
+                    <!-- 　　↑カリキュラムの書き方だと飛べないからリンクの最初に/を追加 -->
+
+                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}カテゴリーだお</a>
                     <p class='body'>{{$post->body}}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
