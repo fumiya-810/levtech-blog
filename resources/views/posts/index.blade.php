@@ -41,6 +41,19 @@
         </script>
         
         <p>ログインユーザー：{{ Auth::user()->name }}</p>
+        
+        <h2>ここから下はAPIの練習だお</h2>
+        <div>
+            @foreach($questions as $question)
+                <div>
+                    <a href="https://teratail.com/questions/{{ $question['id'] }}">
+                        {{ $question['title'] }}
+                    </a>
+                    <br>
+                </div>
+            @endforeach
+        </div>
+
         </x-app-layout>
     </body>
 </html>
