@@ -18,7 +18,9 @@
             @foreach($posts as $post)
                 <div class='post'>
                     <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title}}なぜ飛べない</h2></a>
-                    <!-- 　　↑カリキュラムの書き方だと飛べないからリンクの最初に/を追加 -->
+                    <!-- 　　↑カリキュラムの書き方だと飛べないからリンクの最初に/を追加
+                            ここの書き方を間違っていた？    
+                    -->
 
                     <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}カテゴリーだお</a>
                     <p class='body'>{{$post->body}}</p>
