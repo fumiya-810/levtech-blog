@@ -40,8 +40,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//Route::get('/categories/{category}', [CategoryController::class, 'index']);
-//カリキュラムの書き方だと詳細ページに行けないので↓の書き方に変更
+//Route::get('/categories/{category}', [CategoryController::class,'index']);
+//カリキュラムの書き方だとカテゴリーごとの一覧ページに行けないので↓の書き方に変更
 Route::get('/categories/{category}','App\Http\Controllers\CategoryController@index');
+
+
+//カテゴリーごとの一覧からだと詳細画面に飛べない
+//Route::get('/categories/{post}','App\Http\Controllers\PostController@show');
 
 require __DIR__.'/auth.php';
